@@ -5,7 +5,7 @@
 
 -   [Technical interview](https://intranet.alxswe.com/concepts/100005)
 
-### [0. Pascal's Triangle](https://github.com/vpnchengo/aalx-interview/blob/main/0x00-pascal_triangle/0-pascal_triangle.py)
+### [0. Pascal's Triangle](https://github.com/vpnchengo/alx-interview/blob/main/0x00-pascal_triangle/0-pascal_triangle.py)
 
 Create a function  `def pascal_triangle(n):`  that returns a list of lists of integers representing the Pascal’s triangle of  `n`:
 
