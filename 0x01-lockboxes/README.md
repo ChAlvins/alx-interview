@@ -1,10 +1,7 @@
 ﻿
 # 0x01. Lockboxes
 
-
-
-
-### [0. Lockboxes](https://github.com/vpnchengo/alx-interview/blob/main/0x04-TypeScript/0x01-lockboxes/0-lockboxes.py)
+### [](https://github.com/vpnchengo/alx-interview/tree/main/0x01-lockboxes#0-lockboxes)[0. Lockboxes](https://github.com/vpnchengo/alx-interview/blob/main/0x01-lockboxes/0-lockboxes.py)
 
 You have  `n`  number of locked boxes in front of you. Each box is numbered sequentially from  `0`  to  `n - 1`  and each box may contain keys to the other boxes.
 
@@ -35,6 +32,7 @@ print(canUnlockAll(boxes))
 
 carrie@ubuntu:~/0x01-lockboxes$
 
+
 ```
 
 ```
@@ -45,5 +43,3 @@ False
 carrie@ubuntu:~/0x01-lockboxes$
 
 ```
-
-
