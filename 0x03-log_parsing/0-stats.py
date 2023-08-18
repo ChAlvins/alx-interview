@@ -15,15 +15,15 @@ counter = 0
 try:
     for line in sys.stdin:
         line_list = line.split(" ")
-        if len(line_list) >= 6:
+        if len(line_list) > 4:
             status_code = line_list[-2]
             file_size = int(line_list[-1])
-            if status_code in status_code_count:
-                status_code_count += 1
+            if status_code in status_code_count.keys():
+                status_code_count[status_code] += 1
             total_size += file_size
             counter += 1
 
-        if counter == 10 or isinstance(err, KeyboardInterrupt):
+        if counter == 10:
             print("File size: {}".format(total_size))
             for key, value in sorted(status_code_count.items()):
                 if value != 0:
