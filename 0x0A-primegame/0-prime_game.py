@@ -1,34 +1,35 @@
 #!/usr/bin/python3
+"""Program that performs prime game"""
+
 
 def isWinner(x, nums):
-    def is_prime(num):
-        if num < 2:
-            return False
-        for i in range(2, int(num**0.5) + 1):
-            if num % i == 0:
-                return False
-        return True
+    if not nums or x < 1:
+        return None
 
-    def get_primes_up_to_n(n):
-        primes = []
-        for i in range(2, n + 1):
-            if is_prime(i):
-                primes.append(i)
-        return primes
+    n = max(nums)
+    fltr = [True for _ in range(max(n + 1, 2))]
 
-    def calculate_winner(primes_left):
-        if not primes_left:
-            return "Ben"
-        return "Maria" if len(primes_left) % 2 == 1 else "Ben"
+    for i in range(2, int(pow(n, 0.5)) + 1):
+        if not fltr[i]:
+            continue
+        for j in range(i * i, n + 1, i):
+            fltr[j] = False
 
-    overall_winner = None
+    fltr[0] = fltr[1] = False
+
+    count_primes = 0
+    for i in range(len(fltr)):
+        if fltr[i]:
+            count_primes += 1
+        fltr[i] = count_primes
+
+    plyr1 = 0
     for n in nums:
-        primes_left = get_primes_up_to_n(n)
-        round_winner = calculate_winner(primes_left)
-        if overall_winner is None:
-            overall_winner = round_winner
-        elif round_winner is not None:
-            if overall_winner != round_winner:
-                overall_winner = None
+        plyr1 += fltr[n] % 2 == 1
 
-    return overall_winner
+    if plyr1 * 2 == len(nums):
+        return None
+    elif plyr1 * 2 > len(nums):
+        return "Maria"
+    else:
+        return "Ben"
